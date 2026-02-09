@@ -29,6 +29,10 @@ class Vector3 {
     const dz = a.z - b.z;
     return Math.sqrt(dx * dx + dy * dy + dz * dz);
   };
+
+  public ToArr(): [number, number, number] {
+    return [this.x, this.y, this.z];
+  }
 }
 
 export default Vector3;
