@@ -1,4 +1,6 @@
 class Vector3 {
+  public static Zero: Vector3 = new Vector3(0, 0, 0);
+
   public x: number = 0;
   public y: number = 0;
   public z: number = 0;
