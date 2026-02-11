@@ -2,6 +2,7 @@ import { Environment, PointerLockControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import styled from "styled-components";
 import Player from "./player/Player";
+import Spaceship from "./spaceship/Spaceship";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -14,8 +15,10 @@ const App = () => {
     <Wrapper>
       <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
         <Environment files="/assets/HDR_blue_nebulae-1.hdr" background />
+        <ambientLight intensity={0.01} />
         <PointerLockControls />
         <Player />
+        <Spaceship />
         {/* <ambientLight intensity={0.5} /> */}
         <directionalLight position={[0, 0, 150]} intensity={1} />
         <mesh position={[-40, 0, -50]}>
