@@ -1,9 +1,8 @@
 import { Canvas } from "@react-three/fiber";
 import Skybox from "./components/Skybox/Skybox";
 import styled from "styled-components";
-import { PointerLockControls } from "@react-three/drei";
 import Sun from "./components/Sun/Sun";
-import PlayerController from "./components/PlayerController/PlayerController";
+import Player from "./components/Player/Player";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -18,14 +17,13 @@ const App = () => {
         gl={{ logarithmicDepthBuffer: true }}
         camera={{ near: 1, far: 1000000 }}
       >
-        <PointerLockControls />
-        <PlayerController />
+        <Player />
         <Skybox />
         <Sun />
 
         <ambientLight intensity={0.01} />
         <>
-          <mesh position={[0, 0, -10]} scale={[5, 5, 5]}>
+          <mesh position={[500, 0, 500]} scale={[10, 10, 10]}>
             <sphereGeometry />
             <meshStandardMaterial color="orange" />
           </mesh>

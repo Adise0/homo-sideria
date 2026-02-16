@@ -6,8 +6,9 @@ const PlayerController = () => {
   const [keys, setKeys] = useState<{ [key: string]: boolean }>({});
 
   useFrame((_, dt) => {
-    const speed = 10 * dt;
-
+    let speed = 10;
+    if (keys["ShiftLeft"]) speed += 500;
+    speed *= dt;
     if (keys["KeyW"]) camera.translateZ(-speed);
     if (keys["KeyS"]) camera.translateZ(speed);
     if (keys["KeyA"]) camera.translateX(-speed);
